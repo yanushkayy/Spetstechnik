@@ -1460,7 +1460,6 @@ body {
 }
 
 /* Не просто гарантия, а полное сервисное сопровождение */
-/* Общий контейнер */
 .service-guarantee {
   background: #fff;
 }
@@ -1472,7 +1471,7 @@ body {
 }
 
 /* Заголовок */
-.section-title h1 {
+.section-title {
   font-family: var(--font-family);
   font-size: 36px;
   font-weight: 700;
@@ -1482,7 +1481,9 @@ body {
 }
 
 .section-title .subtext {
+  display: block;
   color: var(--gray-1);
+  margin-top: 10px;
   margin-bottom: 30px;
 }
 
@@ -1515,61 +1516,54 @@ body {
 
 /* Правая колонка: свайпер */
 .service-docs-slider {
+  position: relative;
   flex: 1 0 55%;
-  width: 100%;
-  height: auto;             /* фикс. высоту убрали, чтобы секция не распиралась */
-}
-
-/* Контейнер свайпера */
-.service-docs-slider .mySwiper {
-  overflow: hidden;         /* предотвращает "залазание" на следующий блок */
-  padding-bottom: 24px;     /* запас под точки */
+  max-width: 602px;
+  min-height: 383px;
+  padding-bottom: 60px; /* место под скроллбар */
 }
 
 /* Свайпер: трек и слайды */
 .service-docs-slider .swiper-wrapper {
   height: auto;
-  margin-bottom: 16px;      /* отступ между изображением и точками */
+  margin-bottom: 16px;
 }
 
 .service-docs-slider .swiper-slide {
   display: flex;
-  width: 320px !important;  /* контролируем ширину слайда на десктопе */
+  width: 288px !important;
+  height: 383px;
   flex-shrink: 0;
   justify-content: center;
   align-items: center;
-  height: auto;
-  padding: 0;
+  margin-right: 26px;
+  overflow: hidden;
+}
+
+.service-docs-slider .swiper-slide:last-child {
+  margin-right: 0;
 }
 
 /* Изображения */
 .service-docs-slider img {
   display: block;
   width: 100%;
-  height: auto;
-  max-height: 420px;        /* ограничение, чтобы не распирало секцию */
+  height: 100%;
   object-fit: contain;
 }
 
-/* Точки */
-.service-docs-slider .swiper-pagination {
-  margin-top: 0;
-  position: static;
-  text-align: center;
+/* Scrollbar */
+.service-docs-slider-scrollbar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-color: #999;
 }
 
-.service-docs-slider .swiper-pagination-bullet {
-  width: 10px;
-  height: 10px;
-  background: #000;
-  opacity: 1;
-  margin: 0 5px;
-  border-radius: 50%;
-  transition: background 0.3s;
-}
-
-.service-docs-slider .swiper-pagination-bullet-active {
-  background: var(--primary);
+.service-docs-slider-scrollbar .swiper-scrollbar-drag {
+  background-color: #257DE3;
 }
 
 /* Адаптивность */
@@ -1586,16 +1580,17 @@ body {
   }
 
   .service-docs-slider .swiper-slide {
-    width: 280px !important; /* компактнее карточки */
+    width: 280px !important;
+    height: auto;
   }
 
   .service-docs-slider img {
-    max-height: 320px;       /* ограничиваем высоту картинок */
+    max-height: 320px;
   }
 }
 
 @media (max-width: 768px) {
-  .section-title h1 {
+  .section-title {
     font-size: 28px;
   }
 
@@ -1603,21 +1598,26 @@ body {
     font-size: 18px;
   }
 
+  .service-docs-slider {
+    max-width: 405px;
+    min-height: 453px;
+    padding-bottom: 70px;
+    margin: 0 auto;
+  }
+
   .service-docs-slider .swiper-slide {
-    width: 100% !important;   /* ширина слайда от контейнера — удобнее центрировать */
+    width: 100% !important;
     max-width: 100%;
-    justify-content: center;
+    height: auto;
     margin: 0;
   }
 
   .service-docs-slider img {
     width: 300px;
-    /* max-height: 240px; */
     margin: 0 auto;
   }
 }
 
-/* Доп. брейкпоинт для 640px: жёсткое центрирование */
 @media (max-width: 640px) {
   .service-docs-slider .swiper-slide {
     width: 100% !important;
@@ -1625,6 +1625,7 @@ body {
     margin: 0;
   }
 }
+
 
 /* Модалка */
 .cert-modal {

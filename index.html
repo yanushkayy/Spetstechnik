@@ -557,15 +557,16 @@
 
 
 <!-- Не просто гарантия -->
+<!-- Экран 1 -->
 <section class="service-guarantee">
   <div class="service-container">
-    <div class="section-title">
-      <h1>Не просто гарантия, а полное сервисное сопровождение. <span class="subtext">Подтверждено благодарностями от клиентов</span></h1>
-      
-    </div>
+    <h1 class="section-title">
+      Не просто гарантия, а полное сервисное сопровождение.
+      <span class="subtext">Подтверждено благодарностями от клиентов</span>
+    </h1>
 
     <div class="service-info">
-      <!-- Левая часть -->
+      <!-- Левая часть: текст -->
       <div class="service-text">
         <h2>
           Самая длительная гарантия в СФО <br />
@@ -579,16 +580,32 @@
         </h2>
       </div>
 
-      <!-- Правая часть -->
-      <div class="service-docs-slider">
-        <div class="swiper mySwiper">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide"><img src="./img/doc1.svg" alt="Документ 1" /></div>
-            <div class="swiper-slide"><img src="./img/doc2.svg" alt="Документ 2" /></div>
-            <div class="swiper-slide"><img src="./img/doc3.svg" alt="Документ 3" /></div>
+      <!-- Правая часть: свайпер -->
+      <div class="service-docs-slider swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="swiper-zoom-container">
+              <img src="./img/doc1.svg" alt="Документ 1" />
+            </div>
           </div>
-          <div class="swiper-pagination"></div>
+          <div class="swiper-slide">
+            <div class="swiper-zoom-container">
+              <img src="./img/doc2.svg" alt="Документ 2" />
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="swiper-zoom-container">
+              <img src="./img/doc3.svg" alt="Документ 3" />
+            </div>
+          </div>
+          <!-- <div class="swiper-slide">
+            <img src="./img/doc3.svg" alt="Документ 3" />
+          </div> -->
         </div>
+
+        <!-- Scrollbar -->
+        <div class="service-docs-slider-scrollbar"></div>
+
       </div>
     </div>
   </div>
