@@ -998,8 +998,8 @@ body {
   /* padding: 60px 0; */
 }
 
-.section-title span {
-  color: var(--primary);
+.section-title .highlight {
+  color: var(--gray-1);
 }
 
 .business-grid {
